@@ -637,7 +637,7 @@ class Experiment:
             save_name_list.append(save_name)
             ########################################################################
             # metric for un-aligned prediciton
-            metric_list.append({k: mean_eval_dic[k].cpu().numpy() if torch.is_tensor(mean_eval_dic[k]) else mean_eval_dic[k] for k in mean_eval_dic})
+            metric_list.append({k: mean_eval_dic[k].cpu().item() if torch.is_tensor(mean_eval_dic[k]) else mean_eval_dic[k] for k in mean_eval_dic})
             metric_all_list.append({k: eval_dic[k].cpu().numpy() if torch.is_tensor(eval_dic[k]) else eval_dic[k] for k in eval_dic})
 
             # metric for aligned prediciton
